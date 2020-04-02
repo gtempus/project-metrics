@@ -15,7 +15,7 @@ module.exports = {
   exits: {
     success: {
       responseType: 'view',
-      viewTemplatePath: 'pages/homepage'
+      viewTemplatePath: 'pages/health-check'
     },
     notFound: {
       description: 'No user with the specified ID was found in the database.',
