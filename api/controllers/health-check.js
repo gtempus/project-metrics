@@ -1,17 +1,11 @@
+const passport = require('passport');
+
 module.exports = {
-
-
   friendlyName: 'Health check',
-
-
   description: '',
-
-
   inputs: {
 
   },
-
-
   exits: {
     success: {
       responseType: 'view',
@@ -22,14 +16,15 @@ module.exports = {
       responseType: 'notFound'
     }
   },
-
-
   fn: async function (inputs) {
-    console.debug(this.req.headers);
+    passport.authenticate(
+      'bearer',
+      { session: false },
+      function(req, res) {
+        console.debug(req.user);
+        res.json(req.user);
+    });
     // All done.
-    return;
-
+  return;
   }
-
-
 };
