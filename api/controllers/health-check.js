@@ -20,6 +20,7 @@ module.exports = {
     console.debug('Running health-check function...');
     passport.authenticate(
       'bearer',
+      { session: false },
       (err, user, info) => {
         console.debug('USER INFO: ', user);
         return this.res.send(user);

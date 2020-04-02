@@ -6,13 +6,15 @@ passport.use(new BearerStrategy(
   async function(token, done) {
     let info;
     try {
-      info = await axios.get('/https://www.googleapis.com/oauth2/v1/userinfo', {
+      console.debug('Calling google userinfo...');
+      info = await axios.get('https://www.googleapis.com/oauth2/v1/userinfo', {
         params: {
           access_token: token
         }
       });
       return done(null, info, { scope: 'read' });
     } catch (err) {
+      console.error(err);
       return done(err);
     }
   }
