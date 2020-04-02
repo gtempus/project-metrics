@@ -23,7 +23,7 @@ module.exports = {
       { session: false },
       (err, user, info) => {
         console.debug('USER INFO: ', user);
-        return this.res.send(user);
+        return user;
       }
     )(this.req, this.res);
   }
