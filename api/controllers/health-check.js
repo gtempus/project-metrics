@@ -17,6 +17,7 @@ module.exports = {
     }
   },
   fn: function (inputs) {
+    console.debug('Running health-check function...');
     passport.authenticate(
       'bearer',
       (err, user, info) => {
