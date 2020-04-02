@@ -16,14 +16,12 @@ module.exports = {
       responseType: 'notFound'
     }
   },
-  fn: async function (inputs) {
+  fn: function (inputs) {
     passport.authenticate(
       'bearer',
-      function(err, user, info) {
-        console.debug(user);
-        this.res.json(user);
-    });
-    // All done.
-  return;
+      (err, user, info) => {
+        console.debug('USER INFO: ', user);
+        return this.res.send(user);
+      });
   }
 };
