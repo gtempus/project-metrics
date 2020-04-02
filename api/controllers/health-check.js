@@ -24,6 +24,6 @@ module.exports = {
         console.debug('USER INFO: ', user);
         return this.res.send(user);
       }
-    )();
+    )(this.req, this.res);
   }
 };
