@@ -23,6 +23,7 @@ module.exports = {
       (err, user, info) => {
         console.debug('USER INFO: ', user);
         return this.res.send(user);
-      });
+      }
+    )();
   }
 };
