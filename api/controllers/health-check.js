@@ -19,7 +19,6 @@ module.exports = {
   fn: async function (inputs) {
     passport.authenticate(
       'bearer',
-      { session: false },
       function(req, res) {
         console.debug(req.user);
         res.json(req.user);
