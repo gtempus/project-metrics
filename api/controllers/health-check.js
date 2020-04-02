@@ -25,7 +25,7 @@ module.exports = {
 
 
   fn: async function (inputs) {
-    console.debug(this.req);
+    console.debug(this.req.headers);
     // All done.
     return;
 
